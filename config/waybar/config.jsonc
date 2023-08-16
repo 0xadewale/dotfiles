@@ -1,0 +1,217 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": [
+    "wlr/workspaces",
+    "hyprland/submap",
+    "custom/spotify"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "tray",
+    "custom/cava",
+    "network",
+    "pulseaudio",
+    "custom/power"
+  ],
+  "wlr/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "on-click": "activate",
+    //"format": "{icon}",
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": []
+    }
+    /*"format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "default": "",
+      "active": ""
+    }*/
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}  {percent}%",
+    "format-icons": [
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ],
+    "on-scroll-up": "brightnessctl set 1%-",
+    "on-scroll-down": "brightnessctl set 1%+",
+    "on-click": "brightnessctl set 5-",
+    "on-click-right": "brightnessctl set 5+",
+    "min-length": 6
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-alt": "{time}  {icon}",
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ]
+  },
+  "clock": {
+    "format": "{:  %H:%M    %a %d/%m}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "week-pos": "left",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#4ec4c3'><b><u>{}</u></b></span>"
+      },
+      "actions": {
+        "on-click-right": "mode",
+        "on-click-forward": "tz_up",
+        "on-click-backward": "tz_down",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+      }
+    }
+  },
+  "network": {
+    "format-wifi": "󰖩 {signalStrength}%",
+    "format-ethernet": "󰈀",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "󱚼 Disconnected",
+    "tooltip-format-wifi": "{essid} | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
+    "on-click": "foot -e nmtui"
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": " Muted",
+    "scroll-step": 1,
+    "reverse-scrolling": 0,
+    "on-click": "pavucontrol",
+    "on-click-right": "pamixer -t",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        "󰕾",
+        ""
+      ]
+    }
+  },
+  "custom/power": {
+    "format": "⏻",
+    "on-click": "~/.config/rofi/powermenu/type-6/powermenu.sh",
+    "tooltip": false
+  },
+  "custom/spotify": {
+    "exec": "/usr/bin/python3 ~/.config/waybar/scripts/spotify.py --player spotify",
+    "format": "{}  ",
+    "return-type": "json",
+    "on-click": "playerctl --player=spotify play-pause",
+    "on-click-middle": "playerctl --player=spotify next",
+    "on-click-right": "playerctl --player=spotify previous",
+    "on-double-click": "hyprctl dispatch focuswindow Spotify"
+  },
+  "bluetooth": {
+    "format": " {status}",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "format-device-preference": [
+      "device1",
+      "device2"
+    ], // preference list deciding the displayed device
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+  },
+  "custom/media": {
+    "format": "{icon} {}",
+    "escape": true,
+    "return-type": "json",
+    "max-length": 40,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl stop",
+    "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources/custom_modules folder
+  },
+  "custom/ncspot": {
+    "exec": "~/.config/waybar/scripts/mediaplayer.py --player ncspot",
+    "format": " {}",
+    "tooltip-format": "~/.config/waybar/scripts/cava.sh",
+    "escape": true,
+    "max-length": 45,
+    "return-type": "json",
+    "on-click": "playerctl -p ncspot play-pause",
+    "on-click-middle": "playerctl --player=ncspot next",
+    "on-click-right": "playerctl --player=ncspot previous"
+  },
+  "custom/cava": {
+    "exec": "~/.config/waybar/scripts/cava.sh",
+    "format": "{}",
+    "rotate": 180,
+    "tooltip": false
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    },
+    "timeout": 30.5
+  },
+  "hyprland/submap": {
+    "format": " {}",
+    "max-lenght": 8,
+    "tooltip": false
+  }
+}

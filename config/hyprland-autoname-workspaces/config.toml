@@ -1,0 +1,136 @@
+version = "1.1.7"
+
+[class]
+vlc = ""
+thunderbird = "󰻧"
+paperwork = ""
+whatsapp-desktop = ""
+Webcord = "󰙯"
+nheko = ""
+wayvnc = "󰀄"
+personal = ""
+"com.obsproject.Studio" = "󰻂"
+Zotero = "Z"
+org-telegram-desktop = ""
+libreoffice-writer = "󰈙"
+"dmenu-pass generator" = ""
+foot = ""
+firefox = ""
+Spotify = ""
+taskwarrior-tui = ""
+nm-connection-editor = ""
+obsidian = "󱞁"
+kitty = ""
+slack = ""
+libreoffice-impress = "󰈕"
+vivaldi-stable = ""
+org-pwmt-zathura = ""
+qutepreview = ""
+imv = ""
+nwg-look = ""
+geary = "󰻧"
+telegramdesktop = ""
+"org.pwmt.zathura" = ""
+vimiv = ""
+whatsapp-nativefier-d52542 = ""
+nemo = ""
+FFPWA-01H3T6WP5X7TJMR0Y7N90XFHBJ = "󰏋"
+DEFAULT = ""
+Min = "󰇩"
+SchildiChat = "󰳗"
+snappergui = ""
+steam = ""
+wireshark-gtk = ""
+sioyek = ""
+zoom = ""
+"org.qbittorrent.qBittorrent" = ""
+pavucontrol = ""
+".*transmission.*" = ""
+"@Joplin/app-desktop" = "󱞁"
+rapid-photo-downloader = ""
+libreoffice-calc = "󰱾"
+ticktick = ""
+swappy = ""
+qalculate-gtk = ""
+vncviewer = ""
+code-oss = "󰨞"
+jetbrains-phpstorm = ""
+jetbrains-webstorm = ""
+dolphin = ""
+wlfreerdp = "󰀄"
+dmenu-emoji = ""
+font-manager = "󰛖"
+plexamp = ""
+scli = ""
+work = ""
+"Gimp-2.10" = "󰈟"
+sandboxed-tor-browser = ""
+blueman-manager = ""
+gedit = ""
+udiskie = ""
+songrec = ""
+discord = "󰙯"
+virt-manager = ""
+mpv = "󰃽"
+chromium = ""
+chrome = ""
+dmenu-browser = ""
+sun-awt-x11-xframepeer = ""
+neomutt = ""
+xplr = ""
+lutris = ""
+shopping = ""
+1Password = "󰢁"
+thunar = ""
+streamlink-twitch-gui = ""
+org-ksnip-ksnip = ""
+remote-viewer = ""
+molotov = ""
+wire = "󰁀"
+Signal = ""
+org-qutebrowser-qutebrowser = ""
+"org.gnome.Nautilus" = ""
+caprine = "󰈎"
+
+[class_active]
+
+[initial_class]
+
+[initial_class_active]
+
+[workspaces_name]
+
+[title_in_class]
+
+[title_in_class_active]
+
+[title_in_initial_class]
+
+[title_in_initial_class_active]
+
+[initial_title_in_class]
+
+[initial_title_in_class_active]
+
+[initial_title_in_initial_class]
+
+[initial_title_in_initial_class_active]
+
+[exclude]
+Steam = "Friends List"
+fcitx = "*"
+soffice = "*"
+TestApp = ""
+
+[format]
+dedup = true
+dedup_inactive_fullscreen = false
+delim = " "
+workspace = "{id}‡ {delim}{clients}"
+workspace_empty = "{id}"
+client = "{icon}{delim}"
+client_fullscreen = "[{icon}]"
+client_active = "<span color='#91d7e3'>{icon}</span>"
+client_dup = "{icon}ˇ{counter_sup}{delim}"
+client_dup_active = "*{icon}*{delim}{icon}{counter_unfocused_sup}"
+client_dup_fullscreen = "[{icon}]{delim}{icon}{counter_unfocused_sup}"
